@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men's Collection - Vastraa</title>
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ✅ NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: purple;
+    }
+
+    .nav-links li a.active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: purple;
+      bottom: -4px;
+      left: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      border-radius: 4px;
+      height: 32px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      height: 100%;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-icons span {
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-icons span:hover {
+      transform: scale(1.1);
+    }
+
+    .cart-badge {
+      background-color: red;
+      color: white;
+      font-size: 10px;
+      border-radius: 50%;
+      padding: 2px 5px;
+      position: relative;
+      top: -8px;
+      left: -5px;
+    }
+
+    .hero {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #666;
+    }
+
+
+
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Banner */
+
+    .banner1{
+        height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .banner {
+      background: url('C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\bannermanvastra.png') no-repeat center center/cover;
+      height: 750px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    /* Categories */
+    .categories {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .category-card {
+      flex: 1 1 200px;
+      max-width: 220px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .category-card h3 {
+      padding: 10px;
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Bestsellers */
+    .bestsellers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-card h4 {
+      margin: 10px 0 5px;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .product-card p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- ✅ NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <h2>VASTRAA</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="men.html">Men</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" placeholder="Search Products...">
+    </div>
+
+    <div id="product-list"></div>
+
+    <div class="nav-icons">
+      <span title="Wishlist">💖</span>
+      <span title="Account">👤</span>
+      <span title="Cart">🛒<span class="cart-badge">0</span></span>
+    </div>
+  </div>
+</nav>
+
+
+<div class="product-container">
+  <div class="search-results" id="product-list"></div>
+</div>
+
+
+  
+
+  <!-- Banner -->
+  <div class="banner1">
+    MEN'S COLLECTION
+  </div>
+
+  <div class="content">
+    <!-- <h1>Men's Collection</h1> -->
+    <p style="text-align: center;">Explore the latest fashion for men — curated for bold and confident styles.</p>
+  </div>
+
+  <div class="banner">
+  
+  </div>
+
+  
+  <!-- Bestsellers -->
+  <h2 class="section-title">Bestsellers</h2>
+  <div class="bestsellers">
+    <div class="product-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\denimjacketmen.webp" alt="Denim Jacket" />
+      <h4>Denim Jacket</h4>
+      <p>Buy 1 Get 1</p>
+    </div>
+    <div class="product-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\whitekurtaman.jpg" alt="Kurta" />
+      <h4>White Kurta</h4>
+      <p>Flat 40% Off</p>
+    </div>
+    <div class="product-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\printedteemen.webp" alt="T-shirt" />
+      <h4>Printed Tee</h4>
+      <p>50% Off</p>
+    </div>
+    <div class="product-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\joggerman.webp" alt="Joggers" />
+      <h4>Comfy Joggers</h4>
+      <p>Just ₹799</p>
+    </div>
+  </div>
+
+
+
+  <!-- Categories -->
+  <h2 class="section-title">Shop by Category</h2>
+  <div class="categories">
+    <div class="category-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\mencasual.jpg" alt="Casual" />
+      <h3>Casual</h3>
+    </div>
+    <div class="category-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\menparty.webp" alt="Party Wear" />
+      <h3>Party Wear</h3>
+    </div>
+    <div class="category-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\menformal1.webp" alt="Formal" />
+      <h3>Formal</h3>
+    </div>
+    <div class="category-card">
+      <img src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\mencomfy.avif" alt="Comfy" />
+      <h3>Comfy</h3>
+    </div>
+  </div>
+
+
+
+   <script>
+  const currentPage = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute("href");
+    if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+
+
+</script>
+
+
+</body>
+</html>
+
