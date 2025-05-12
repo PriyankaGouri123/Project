@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vastraa - Trendy Clothing</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ✅ NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">
+        <h2>VASTRAA</h2>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="search-box">
+          <form onsubmit="searchProduct(event)">
+            <input type="text" placeholder="Search" id="searchInput" />
+            <button type="submit" style="display: none"></button>
+            <!-- Invisible submit button for form submission -->
+          </form>
+        </div>
+        <div class="nav-icons">
+
+          <ul class="nav-icons">
+        <li><a href="wishlist.html" >💖</a></li>
+        <li><a href="login.html">👤</a></li>
+        <li><a href="cart.html">🛒</a></li>
+      </ul>
+
+          <!-- <a href="wishlist.html">💖</a>
+          <span title="Account">👤</span>
+          <span title="Cart">🛒<span class="cart-badge">0</span></span> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Discount Carousel -->
+    <section class="carousel">
+      <div class="slides">
+        <div class="slide">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\banner1vastraa.png"
+            alt="Banner 1"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\banner2vastraa.png"
+            alt="Banner 2"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\vastraa banner.png"
+            alt="Banner 3"
+          />
+        </div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <section class="product-carousel">
+      <h1>New Arrivals</h1>
+      <div class="carousel-track product-track">
+        <div class="product-card" onclick="addToCart('Product 1')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\shirtman.webp"
+            alt="Product 1"
+          />
+
+          <div class="product-info">
+            <p class="product-name">Trendy shirt</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="product-card" onclick="addToCart('Product 2')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\tshirtmen1.webp"
+            alt="Product 2"
+          />
+
+          <div class="product-info">
+            <p class="product-name">Tshirt</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="product-card" onclick="addToCart('Product 3')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\womanjeans.webp"
+            alt="Product 3"
+          />
+
+          <div class="product-info">
+            <p class="product-name">Black Jeanes</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="product-card" onclick="addToCart('Product 4')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\menshirt2.avif"
+            alt="Product 4"
+          />
+
+          <div class="product-info">
+            <p class="product-name">Printed shirt</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="addToCart('Product 1')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\tshirtmen2.webp"
+            alt="Product 1"
+          />
+
+          <div class="product-info">
+            <p class="product-name">tshirt</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="product-card" onclick="addToCart('Product 2')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\womanskurti1.webp"
+            alt="Product 2"
+          />
+
+          <div class="product-info">
+            <p class="product-name">Short Kurti</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="product-card" onclick="addToCart('Product 3')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\womanjeanblack.webp"
+            alt="Product 3"
+          />
+
+          <div class="product-info">
+            <p class="product-name">jeans</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="product-card" onclick="addToCart('Product 4')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\tshirtosmen.jpg"
+            alt="Product 4"
+          />
+
+          <div class="product-info">
+            <p class="product-name">Oversized tee</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="addToCart('Product 5')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\menjeansblack.webp"
+            alt="Product 5"
+          />
+
+          <div class="product-info">
+            <p class="product-name">tshirt</p>
+
+            <div class="rating">
+              <span class="rating-value">4.8</span>
+              <span class="star">⭐</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="buyNow('Satin Striped Shirt - Maroon')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bestseller-carousel" onclick="toggleCarouselPause()">
+      <div class="carousel-track" id="bestsellerTrack">
+        <div class="carousel-card" onclick="showDeal('tshirts')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\tshirt.webp"
+            alt="Bestselling T-Shirts"
+          />
+          <p>50% Off on Bestselling T-Shirts!</p>
+        </div>
+        <div class="carousel-card" onclick="showDeal('jackets')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\denim-jackets.jpg"
+            alt="Denim Jackets"
+          />
+          <p>Buy 1 Get 1 on Denim Jackets!</p>
+        </div>
+        <div class="carousel-card" onclick="showDeal('hoodies')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\smartwatch.jpg"
+            alt="Hoodies"
+          />
+          <p>Flat ₹300 Off on Hoodies!</p>
+        </div>
+        <div class="carousel-card" onclick="showDeal('kurtas')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\kurta.jpg"
+            alt="Kurtas"
+          />
+          <p>Trending Kurtas - 40% Off</p>
+        </div>
+        <div class="carousel-card" onclick="showDeal('dresses')">
+          <img
+            src="C:\\Users\\priya\\OneDrive\\Desktop\\B\\photos\\dress.jpg"
+            alt="Dresses"
+          />
+          <p>Steal Deal: ₹999 Dresses!</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li onclick="showSection('about')">About Us</li>
+            <li onclick="showSizeChart()">Size Chart</li>
+            <li onclick="showCareers()">Careers</li>
+            <li onclick="showBlog()">Blog</li>
+            <li onclick="showReturns()">My Returns</li>
+            <li onclick="showCAP()">CAP</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Policies</h4>
+          <ul>
+            <li onclick="showPolicy('privacy')">Privacy Policy</li>
+            <li onclick="showPolicy('shipping')">Shipping & Returns</li>
+            <li onclick="showPolicy('payments')">Payments & Orders</li>
+            <li onclick="showContact()">Contact Us</li>
+            <li onclick="showPolicy('terms')">Terms & Conditions</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <p onclick="callCustomerService()">080 6863 5857</p>
+          <p onclick="emailCustomerService()">support@vastraa.com</p>
+          <div class="social-icons">
+            <span onclick="openSocial('instagram')">📷</span>
+            <span onclick="openSocial('facebook')">📘</span>
+            <span onclick="openSocial('twitter')">🐦</span>
+          </div>
+        </div>
+        <div>
+          <h4>Subscribe</h4>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            id="subscribeEmail"
+          />
+          <button onclick="subscribe()">→</button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Vastraa</p>
+        <div class="payment-icons">
+          <span onclick="showPaymentOptions('credit')">💳</span>
+          <span onclick="showPaymentOptions('invoice')">🧾</span>
+          <span onclick="showPaymentOptions('crypto')">🪙</span>
+          <span onclick="showPaymentOptions('upi')">💰</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Load shared navbar -->
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>
