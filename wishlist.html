@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vastraa - Wishlist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .top-bar {
+      background-color: #f8c97c;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: #d8385e;
+      color: white;
+    }
+
+    .logo h2 {
+      margin: 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links a.active {
+      color: #ff7b7b;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .search-box input {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      width: 200px;
+    }
+
+    .wishlist-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .wishlist-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .wishlist-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .item-info {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .remove-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .wishlist-summary {
+      text-align: right;
+    }
+
+    .wishlist-summary button {
+      padding: 10px 20px;
+      background-color: #007185;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background-color: #222;
+      color: white;
+      padding: 1rem;
+    }
+
+    /* Animated Text */
+    .animated-text {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #007185;
+      animation: bounce 2s infinite;
+      margin-bottom: 2rem;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">Free Shipping on Orders Over ₹500</div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><h2>Vastraa</h2></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="wishlist.html" class="active">Wishlist</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Wishlist Section -->
+  <section class="wishlist-section">
+    <h2>Your Wishlist</h2>
+
+    <!-- Animated Engagement Text -->
+    <p class="animated-text">Add your favorite items to your wishlist and shop later!</p>
+
+    <div class="wishlist-container" id="wishlist-container">
+      <!-- Wishlist items will be inserted here -->
+    </div>
+
+    <!-- Empty Wishlist Message -->
+    <div id="empty-wishlist-message" class="empty-cart" style="display: none;">
+      <p>Your wishlist is empty. Start adding your favorite items!</p>
+    </div>
+
+    <!-- Wishlist Summary -->
+    <div class="wishlist-summary" id="wishlist-summary" style="display: none;">
+      <button id="move-to-cart-btn">Move All to Cart</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <ul>
+        <li>About Us</li>
+        <li>Careers</li>
+        <li>Blog</li>
+      </ul>
+      <ul>
+        <li>Return Policy</li>
+        <li>Terms of Use</li>
+        <li>Privacy Policy</li>
+      </ul>
+      <ul>
+        <li>Contact</li>
+        <li>Support</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vastraa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Wishlist data (simulate data)
+    const wishlistItems = [
+      {
+        name: "Cotton Kurta Set",
+        price: 899,
+        image: "images/product1.jpg"
+      },
+      {
+        name: "Silk Saree",
+        price: 1599,
+        image: "images/product2.jpg"
+      }
+    ];
+
+    // Function to render wishlist items
+    function renderWishlist() {
+      const wishlistContainer = document.getElementById("wishlist-container");
+      const wishlistSummary = document.getElementById("wishlist-summary");
+      const emptyWishlistMessage = document.getElementById("empty-wishlist-message");
+
+      if (wishlistItems.length === 0) {
+        wishlistContainer.style.display = 'none';
+        wishlistSummary.style.display = 'none';
+        emptyWishlistMessage.style.display = 'block';
+      } else {
+        wishlistContainer.style.display = 'block';
+        wishlistSummary.style.display = 'block';
+        emptyWishlistMessage.style.display = 'none';
+        
+        wishlistContainer.innerHTML = wishlistItems.map(item => `
+          <div class="wishlist-item">
+            <img src="${item.image}" alt="Product" style="width: 100px; height: auto; border-radius: 8px;" />
+            <div class="item-info">
+              <p class="product-name">${item.name}</p>
+              <p class="final-price">₹${item.price}</p>
+            </div>
+            <button class="remove-btn" onclick="removeFromWishlist('${item.name}')">Remove</button>
+          </div>
+        `).join("");
+      }
+    }
+
+    // Function to remove item from wishlist
+    function removeFromWishlist(productName) {
+      const index = wishlistItems.findIndex(item => item.name === productName);
+      if (index !== -1) {
+        wishlistItems.splice(index, 1);
+        renderWishlist();
+      }
+    }
+
+    // Handle Move All to Cart button click
+    document.getElementById("move-to-cart-btn").addEventListener("click", function() {
+      alert("All items have been moved to your cart!");
+      wishlistItems.length = 0; // Clear wishlist
+      renderWishlist();
+    });
+
+    // Initial render
+    renderWishlist();
+  </script>
+</body>
+</html>
