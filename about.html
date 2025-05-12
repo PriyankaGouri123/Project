@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Vastraa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+
+    
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ✅ NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: purple;
+    }
+
+    .nav-links li a.active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: purple;
+      bottom: -4px;
+      left: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      border-radius: 4px;
+      height: 32px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      height: 100%;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-icons span {
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-icons span:hover {
+      transform: scale(1.1);
+    }
+
+    .cart-badge {
+      background-color: red;
+      color: white;
+      font-size: 10px;
+      border-radius: 50%;
+      padding: 2px 5px;
+      position: relative;
+      top: -8px;
+      left: -5px;
+    }
+
+    .hero {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f4f4;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #ccc;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #000;
+    }
+
+    header p {
+      color: #8a2be2;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #000;
+      font-weight: 800;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+  
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta button {
+      padding: 0.8rem 2rem;
+      border: 2px solid #8a2be2;
+      background: transparent;
+      color: #8a2be2;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #8a2be2;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #fff;
+      border-top: 2px solid #ccc;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <h2>VASTRAA</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="men.html">Men</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" placeholder="Search" />
+    </div>
+    <div class="nav-icons">
+      <span title="Wishlist">💖</span>
+      <span title="Account">👤</span>
+      <span title="Cart">🛒<span class="cart-badge">0</span></span>
+    </div>
+  </div>
+</nav>
+
+  <!-- <div class="content">
+    <h1>Men's Collection</h1>
+    <p>Explore the latest fashion for men — curated for bold and confident styles.</p>
+  </div> -->
+
+  <header>
+    <h1>About Vastraa</h1>
+    <p>If Your Outfit Doesn’t Stun, You’re Not Wearing Vastraa.</p>
+  </header>
+
+  <div class="container">
+
+    <section class="fade-in">
+      <h2>Unleashing Fashion With Attitude</h2>
+      <p>At <strong>Vastraa</strong>, fashion isn’t just about what you wear — it’s about how you express yourself. Our styles are bold, confident, and crafted to make heads turn.</p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Our Vision</h2>
+      <p>To empower individuals with clothing that reflects elegance, individuality, and modern flair. We’re redefining everyday fashion with designs that speak for themselves.</p>
+    </section>
+
+    <section class="fade-in">
+      <h2>What We Stand For</h2>
+      <ul>
+        <li>Statement Styles: Clothes that command attention</li>
+        <li>Quality First: Premium fabrics and finishes</li>
+        <li>Inclusive Fashion: Celebrating every body</li>
+        <li>Eco-Conscious: Fashion with responsibility</li>
+      </ul>
+    </section>
+
+    <div class="cta fade-in">
+      <button onclick="window.location.href='index.html'">Explore Styles</button>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 Vastraa. All Rights Reserved. | www.vastraa.com
+  </footer>
+
+ 
+
+  <script>
+  // ✨ Fade-in animation
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.2 });
+
+  faders.forEach(section => {
+    appearOnScroll.observe(section);
+  });
+
+  // ✅ Highlight active navbar link based on current page
+  const currentPage = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute("href");
+    if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
+
+
+</body>
+</html>
