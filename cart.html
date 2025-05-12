@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vastraa - Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .top-bar {
+      background-color: #ff7b7b;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: #007185;
+      color: white;
+    }
+
+    .logo h2 {
+      margin: 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links a.active {
+      color: #ff7b7b;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .search-box input {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      width: 200px;
+    }
+
+    .cart-icon {
+      position: relative;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 0.8rem;
+    }
+
+    .cart-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .final-price {
+      font-size: 1.2rem;
+      color: #007185;
+    }
+
+    .remove-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cart-summary {
+      text-align: right;
+    }
+
+    .cart-summary button {
+      padding: 10px 20px;
+      background-color: #007185;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background-color: #222;
+      color: white;
+      padding: 1rem;
+    }
+
+    /* Empty cart animation */
+    .empty-cart {
+      font-size: 1.5rem;
+      color: #ff7b7b;
+      margin-bottom: 1rem;
+    }
+
+    .cathy-animation {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">Free Shipping on Orders Over ₹500</div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><h2>Vastraa</h2></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Shop</a></li>
+      <li><a href="cart.html" class="active">Cart</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="nav-icons">
+        <span class="cart-icon">🛒<span class="cart-badge">2</span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Section -->
+  <section class="cart-section" id="cart-section">
+    <h2>Your Cart</h2>
+    <div class="cart-container" id="cart-container">
+      <!-- Product items will be inserted here -->
+    </div>
+
+    <!-- Empty Cart Message -->
+    <div id="empty-cart-message" class="empty-cart" style="display: none;">
+      <p>Your cart is empty. <span class="cathy-animation">🛍️</span> Let's shop!</p>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary" id="cart-summary" style="display: none;">
+      <p>Total: ₹0</p>
+      <button id="place-order-btn">Place Order</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <ul>
+        <li>About Us</li>
+        <li>Careers</li>
+        <li>Blog</li>
+      </ul>
+      <ul>
+        <li>Return Policy</li>
+        <li>Terms of Use</li>
+        <li>Privacy Policy</li>
+      </ul>
+      <ul>
+        <li>Contact</li>
+        <li>Support</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vastraa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Cart data (simulate data)
+    const cartItems = [
+      {
+        name: "Cotton Kurta Set",
+        price: 899,
+        image: "images/product1.jpg"
+      },
+      {
+        name: "Silk Saree",
+        price: 1599,
+        image: "images/product2.jpg"
+      }
+    ];
+
+    // Function to render cart items
+    function renderCart() {
+      const cartContainer = document.getElementById("cart-container");
+      const cartSummary = document.getElementById("cart-summary");
+      const emptyCartMessage = document.getElementById("empty-cart-message");
+
+      if (cartItems.length === 0) {
+        cartContainer.style.display = 'none';
+        cartSummary.style.display = 'none';
+        emptyCartMessage.style.display = 'block';
+      } else {
+        cartContainer.style.display = 'block';
+        cartSummary.style.display = 'block';
+        emptyCartMessage.style.display = 'none';
+        
+        cartContainer.innerHTML = cartItems.map(item => `
+          <div class="product-card">
+            <img src="${item.image}" alt="Product" style="width: 100px; height: auto; border-radius: 8px;" />
+            <div class="product-info">
+              <p class="product-name">${item.name}</p>
+              <p class="final-price">₹${item.price}</p>
+            </div>
+            <button class="remove-btn" onclick="removeItem('${item.name}')">Remove</button>
+          </div>
+        `).join("");
+
+        const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
+        document.querySelector(".cart-summary p").innerHTML = `Total: ₹${totalPrice}`;
+      }
+    }
+
+    // Function to remove item from cart
+    function removeItem(productName) {
+      const index = cartItems.findIndex(item => item.name === productName);
+      if (index !== -1) {
+        cartItems.splice(index, 1);
+        renderCart();
+      }
+    }
+
+    // Handle Place Order button click
+    document.getElementById("place-order-btn").addEventListener("click", function() {
+      alert("Your order has been placed successfully!");
+      cartItems.length = 0; // Clear cart
+      renderCart();
+    });
+
+    // Initial render
+    renderCart();
+  </script>
+</body>
+</html>
